@@ -8,13 +8,34 @@ int main (){
 
 int tabuleiro[10][10]={0};//iniciando a matriz com 10x10 com vlor inicial 0
 
-//tabuleiro[4][2] = 3; tabuleiro[4][3] = 3; tabuleiro[4][4] = 3; // navio 1
+//posicionando 1 navio que opcupa 3 lugares na horizontal sem usar loop
+//tabuleiro[6][3] = 3; tabuleiro[6][4] = 3; tabuleiro[6][5] = 3; // navio 1
 
-for (int n = 0; n < 3; n++) {
-        tabuleiro[6][3 + n] = 3; // navio 2 horizontal/{6D,6F,6H}   
+//posicionando 1 navio que opcupa 3 lugares na vertical sem usar loop
+//tabuleiro[1][8]=3; tabuleiro[2][8]=3;tabuleiro[3][8]=3; //navio 2
+
+    //posicionando 1 navio que ocupa 3 lugares na horizontal usando loop for {6D,6F,6H}
+    for (int n = 0; n < 3; n++) {
+        tabuleiro[6][3 + n] = 3; //navio 1
     }
-    for(int m=0;m<3;m++){
-        tabuleiro[1+m][8]=3;//navio 3 vertical/{1J,2J,3J}
+    //posicionando 1 navio que ocupa 3 lugares na vertical usando loop for/{1J,2J,3J}
+    for(int m=0;m<3;m++){ 
+        tabuleiro[1+m][8]=3;//navio 2
+    }
+        //posicionado 1 navio que ocupa 3 lugares na diagonal principal sem usar lopp;
+    //tabuleiro[1][1] = 3; tabuleiro[2][2] = 3; tabuleiro[3][3] = 3; // navio 3 
+
+    // posicionado 1 navio que ocupa 3 lugares na diagonal secundaria sem usar loop;
+    // tabuleiro[9][5] = 3; tabuleiro[8][6] = 3; tabuleiro[7][7] = 3; //navio 4
+    
+    // posicionado 1 navio que ocupa 3 lugares na diagonal principal usando loop for
+    for (int p = 0; p < 3; p++) {
+        tabuleiro[1 + p][1 + p] = 3; // navio 3 {1B,2C,3D}
+    } 
+
+    // posicionado 1 navio que ocupa 3 lugares na diagonal secundaria usando loop for
+    for (int t = 0; t < 3; t++) {
+        tabuleiro[9 - t][5 + t] = 3; // navio 4{9G,8H,7I}
     }
 //msotrando o tabuleiro com os navios!
 printf("mosntrando o tabuleiro\n");
@@ -31,11 +52,6 @@ printf("mosntrando o tabuleiro\n");
         printf("\n");
     }  
 
-
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
